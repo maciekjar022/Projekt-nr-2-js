@@ -1,0 +1,44 @@
+* {
+   box-sizing: border-box;
+   margin: 10px;
+   padding: 0;
+}
+
+body {
+   min-height: 100vh;
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: #faebd7;
+}
+
+h1 {
+   text-align: center;
+}
+
+.container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+
+label {
+   font-size: 30px;
+}
+
+input {
+   font-size: 20px;
+}
+
+button {
+   font-size: 20px;
+}
+
+select {
+   font-size: 20px;
+}
+
+#result {
+   font-size: 30px;
+   color: brown;
+}
