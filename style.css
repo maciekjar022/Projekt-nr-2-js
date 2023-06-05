@@ -26,17 +26,25 @@ label {
    font-size: 30px;
 }
 
-input {
+input,
+button,
+select {
    font-size: 20px;
 }
 
-button {
+.clearButton {
+   display: block;
+   margin: 0 auto;
+
+}
+
+/* button {
    font-size: 20px;
 }
 
 select {
    font-size: 20px;
-}
+} */
 
 #result {
    font-size: 30px;
