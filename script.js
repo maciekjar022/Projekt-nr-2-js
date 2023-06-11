@@ -2,7 +2,6 @@ const currencySelect = document.getElementById("currency");
 const amountInput = document.getElementById("amount");
 const convertButton = document.getElementById("convert");
 const resultText = document.getElementById("resultText");
-const clearButton = document.getElementById("clearButton");
 
 convertButton.addEventListener("click", () => {
   const currency = currencySelect.value;
@@ -15,8 +14,6 @@ convertButton.addEventListener("click", () => {
 
   const url = `https://api.nbp.pl/api/exchangerates/rates/a/${currency}/?format=json`;
 
-  clearResult();
-
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -25,8 +22,6 @@ convertButton.addEventListener("click", () => {
         if (exchangeRate) {
           const convertedAmount = (amount * exchangeRate).toFixed(2);
           displayResult(`${amount} ${currency} = ${convertedAmount} PLN`);
-        } else {
-          displayError("Nie można pobrać kursu wymiany.");
         }
       } else {
         displayError("Nieprawidłowa odpowiedź z interfejsu API.");
@@ -38,17 +33,10 @@ convertButton.addEventListener("click", () => {
     });
 });
 
-clearButton.addEventListener("click", clearResult);
-
 function displayResult(result) {
   resultText.textContent = result;
 }
 
 function displayError(errorMessage) {
   resultText.textContent = errorMessage;
-}
-
-function clearResult() {
-  resultText.textContent = "";
-  amountInput.value = "";
 }
