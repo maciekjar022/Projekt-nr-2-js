@@ -10,7 +10,7 @@ body {
    background-color: #faebd7;
 }
 
-h1 {
+.title {
    text-align: center;
 }
 
@@ -26,16 +26,8 @@ label {
    font-size: 30px;
 }
 
-input,
-button,
-select {
+.operator {
    font-size: 20px;
-}
-
-.clearButton {
-   display: block;
-   margin: 0 auto;
-
 }
 
 .result {
